@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="openfire_django_authprovider" default="all">
-  
-  
+
+
   <property file="build.properties"/>
   <!-- Uncomment the following property if no tests compilation is needed -->
-  <!-- 
+  <!--
   <property name="skip.tests" value="true"/>
    -->
-  
+
   <!-- Compiler options -->
-  
+
   <property name="compiler.debug" value="on"/>
   <property name="compiler.generate.no.warnings" value="off"/>
   <property name="compiler.args" value=""/>
@@ -55,9 +55,9 @@
     <exclude name="**/?*.kt"/>
     <exclude name="**/?*.clj"/>
   </patternset>
-  
+
   <!-- JDK definitions -->
-  
+
   <property name="jdk.bin.1.7" value="${jdk.home.1.7}/bin"/>
   <path id="jdk.classpath.1.7">
     <fileset dir="${jdk.home.1.7}">
@@ -82,22 +82,22 @@
       <include name="jre/lib/ext/zipfs.jar"/>
     </fileset>
   </path>
-  
+
   <property name="project.jdk.home" value="${jdk.home.1.7}"/>
   <property name="project.jdk.bin" value="${jdk.bin.1.7}"/>
   <property name="project.jdk.classpath" value="jdk.classpath.1.7"/>
-  
-  
+
+
   <!-- Project Libraries -->
-  
+
   <path id="library.openfire.classpath">
     <pathelement location="${basedir}/../Openfire"/>
     <fileset dir="${basedir}/../Openfire/openfire/lib">
       <patternset refid="library.patterns"/>
     </fileset>
   </path>
-  
-  
+
+
   <!-- Global Libraries -->
   <!-- Register Custom Compiler Taskdefs -->
   <property name="javac2.home" value="${idea.home}/lib"/>
@@ -113,16 +113,16 @@
   </target>
   
   <!-- Modules -->
-  
+
   <import file="${basedir}/.idea/module_openfire_django_authprovider.xml"/>
-  
+
   <target name="init" description="Build initialization">
     <!-- Perform any build initialization in this target -->
   </target>
-  
+
   <target name="clean" depends="clean.module.openfire_django_authprovider" description="cleanup all"/>
-  
+
   <target name="build.modules" depends="init, clean, compile.module.openfire_django_authprovider" description="build all modules"/>
-  
+
   <target name="all" depends="build.modules" description="build all"/>
 </project>
